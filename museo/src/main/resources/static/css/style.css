@@ -1,46 +1,51 @@
-.Navbar{
-	background-color: rgb(20,20,20);
-	display: flex;
-	justify-content: center;
+.Navbar {
+    background-color: rgb(20, 20, 20);
+    display: flex;
+    justify-content: center;
 }
 
 .Navbar a {
-	color: rgb(242,242,242);
-	text-decoration: none;
-	font-size: 25px;
-	height: 30px;
-	text-align: center;
-	padding: 15px 15px ;
+    color: rgb(242, 242, 242);
+    text-decoration: none;
+    font-size: 25px;
+    height: 30px;
+    text-align: center;
+    padding: 15px 15px;
 }
 
 .Navbar a.active {
-	background-color: rgb(128, 128, 128);
-	color: black;
+    background-color: rgb(128, 128, 128);
+    color: black;
 }
 
 .Navbar a:hover {
-	background-color: rgb(128, 128, 128);
-	color: black;	
+    background-color: rgb(128, 128, 128);
+    color: black;
 }
 
-	Footer  {
-	background-color: rgb(20,20,20);
-	display: flex;
-	padding: 1rem;
-	justify-content: space-between;
+Footer {
+    background-color: rgb(20, 20, 20);
+    height: 20vh;
 }
-	
-	.Menu ul .footer-social-icons {
-		display: inline-flex;	
-	}
-	
- 	Footer p {
-	color: rgb(242,242,242);
-	text-decoration: none;
-	font-size: 25px;
-	height: 30px;
-	text-align: center;
-	display: flex;
-	justify-content: center;
+
+.footer-text{
+    color: white;
+    text-align: center;
 }
-	
+
+.footer-social{
+    display: flex;
+    text-decoration: none;
+}
+.social-icon{
+    width: 50%;
+    height: auto;
+}
+
+.footer-content {
+    display: flex;
+    padding-top: 5vh;
+    padding-right: 3vw;
+    padding-left: 3vw;
+    justify-content: space-between;
+}
