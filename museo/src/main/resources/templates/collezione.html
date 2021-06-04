@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -10,22 +10,40 @@
 </head>
 
 <body>
+    <nav th:replace = "fragments/navbar.html"></nav>
+
     <h1>
-        Espressionismo (Jack La Furia)
+        Espressionismo
     </h1>
 
+    <h2>
+        Curatore: Jake La Furia
+    </h2>
+
+
+    <a href="addOpera">aggiungi una opera alla collezione</a>
+
+
     <div class="container-collezione">
-        <img class = "immagine-opera-museo" src="../static/images/opera_vangog_1.jpg">
-        <div>
-            <a href="opera.html">"La Notte Stellata"
-                <a href="artista.html">(Vincent Van Gogh)</a>
-            </a>
+        <div class="item-collezione">
+            <img class="immagine-opera-museo" src="../static/images/opera_vangog_1.jpg">
+            <div>
+                <a href="opera.html">"La Notte Stellata"
+                    <a href="artista.html">(Vincent Van Gogh)</a>
+                </a>
+            </div>
         </div>
 
-        <img class = "immagine-opera-museo" src="../static/images/opera_vangog_2.jpg">
-        <p>"L'urlo"
-            <span>(Edward Munch)</span>
-        </p>
+
+        <div class="item-collezione">
+            <img class="immagine-opera-museo" src="../static/images/opera_vangog_1.jpg">
+            <div>
+                <a href="opera.html">"La Notte Stellata"
+                    <a href="artista.html">(Vincent Van Gogh)</a>
+                </a>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

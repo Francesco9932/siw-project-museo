@@ -60,7 +60,17 @@ Footer {
     height: 300px;
 }
 .immagine-opera-museo{
-    display: inline-flex;
     width: 300px;
     height: 300px;
+}
+.container-collezione{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.item-collezione{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
 }
