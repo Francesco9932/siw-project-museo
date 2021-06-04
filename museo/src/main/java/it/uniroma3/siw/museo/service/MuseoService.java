@@ -1,5 +1,9 @@
 package it.uniroma3.siw.museo.service;
 
-public class MuseoService{
+import org.springframework.stereotype.Service;
 
+@Service
+public class MuseoService{
+	
+	
 }
