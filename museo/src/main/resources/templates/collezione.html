@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <nav th:replace = "fragments/navbar.html"></nav>
+    <nav th:replace = "fragments/components.html :: navbar"></nav>
 
     <h1>
         Espressionismo
@@ -44,6 +44,9 @@
             </div>
         </div>
     </div>
+    
+    <footer th:replace = "fragments/components.html :: footer"> </footer>
+    
 </body>
 
 </html>
