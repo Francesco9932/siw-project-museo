@@ -1,13 +1,6 @@
 <!doctype html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="/css/style.css">
-  <title>Museo</title>
-</head>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/components.html :: headerfiles(title=#{pageTitle.museo})"></head>
 
 <body>
   <nav th:replace = "/fragments/components.html :: navbar"></nav>
