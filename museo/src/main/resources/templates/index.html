@@ -1,9 +1,11 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/components.html :: headerfiles(title=#{pageTitle.museo})"></head>
+<head th:replace="/fragments/components.html :: headerfiles(title=#{pageTitle.museo})"></head>
 
 <body>
   <nav th:replace = "/fragments/components.html :: navbar"></nav>
+
+  <a href="addArtista">aggiungi artista</a>
 
   <div class="container-image-museo">
     <h1>museoFantasmagorico!!</h1>

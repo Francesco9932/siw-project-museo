@@ -18,16 +18,16 @@ public class Artista {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@Column(nullable = false)
+	@Column
 	private String nome;
 	
-	@Column(nullable = false)
+	@Column
 	private String cognome;
 	
-	@Column(nullable = false)
+	@Column
 	private LocalDate dataDiNascita;
 	
-	@Column(nullable = false)
+	@Column
 	private String luogoDiNascita;
 	
 	@Column
@@ -36,7 +36,7 @@ public class Artista {
 	@Column
 	private String luogoDiMorte;
 	
-	@Column(nullable = false)
+	@Column
 	private String nazionalita;
 	
 	@OneToMany(mappedBy = "artista")

@@ -73,4 +73,14 @@ public class MuseoService{
 	public void rimuoviArtista(Artista artista) {
 		artistaRepository.delete(artista);
 	}
+	
+	
+	@Transactional
+	public boolean alreadyExists(Artista artista) {
+		List<Artista> artisti = this.artistaRepository.findByNome(artista.getNome());
+		if (artisti.size() > 0)
+			return true;
+		else 
+			return false;
+	}
 }
