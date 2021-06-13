@@ -18,6 +18,14 @@
 				<span th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></span>
 			</div>	
 			<div>
+				<span>Luogo di nascita:</span>
+				<span><input type="text" th:field="*{luogoDiNascita}" /></span>
+			</div>		
+			<div>
+				<span>Luogo di morte:</span>
+				<span><input type="text" th:field="*{luogoDiMorte}" /></span>
+			</div>	
+			<div>
 				<span><button type="submit">Invio</button></span>
 			</div>
 		</div>

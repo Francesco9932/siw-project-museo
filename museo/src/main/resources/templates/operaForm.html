@@ -11,6 +11,15 @@
       		<span><input type="text" th:field="*{titolo}"></span>
       		<span th:if="${#fields.hasErrors('titolo')}" th:errors="*{titolo}"></span>
   		</div>
+  		<div>
+      		<span>Anno di realizzazione:</span>
+      		<span><input type="text" th:field="*{annoDiRealizzazione}"></span>
+  		</div>
+  		
+  		<div>
+      		<span>Descrizione:</span>
+      		<span><input type="text" th:field="*{descrizione}"></span>
+  		</div>
 
   		<div>
       		<span><button type="submit">Invio</button></span>
