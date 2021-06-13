@@ -2,15 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/components.html :: headerfiles(title=#{title.artistaForm})"> </head>
 <body>
-	<form th:action="@{/artista}" method="POST" th:object="${artista}">		
+	<form th:action="@{/artista}" method="POST" th:object="${artista}">	
+		<div th:if="${#fields.hasGlobalErrors()}">
+  			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
+		</div>	
 		<div>
 			<div>
 				<span>Nome:</span>
-				<span><input type="text" th:field="${artista.nome}" /></span>
+				<span><input type="text" th:field="*{nome}" /></span>
+				<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
 			</div>	
 			<div>
 				<span>Cognome:</span>
-				<span><input type="text" th:field="${artista.cognome}" /></span>
+				<span><input type="text" th:field="*{cognome}" /></span>
+				<span th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></span>
 			</div>	
 			<div>
 				<span><button type="submit">Invio</button></span>

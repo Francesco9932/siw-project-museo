@@ -10,8 +10,10 @@ import org.springframework.stereotype.Service;
 
 import it.uniroma3.siw.museo.model.Artista;
 import it.uniroma3.siw.museo.model.Collezione;
+import it.uniroma3.siw.museo.model.Opera;
 import it.uniroma3.siw.museo.repository.ArtistaRepository;
 import it.uniroma3.siw.museo.repository.CollezioneRepository;
+import it.uniroma3.siw.museo.repository.OperaRepository;
 
 @Service
 public class MuseoService{
@@ -20,6 +22,9 @@ public class MuseoService{
 	
 	@Autowired
 	public ArtistaRepository artistaRepository;
+	
+	@Autowired 
+	public OperaRepository operaRepository;
 
 	@Transactional
 	public List<Collezione> getCollezioni(){
@@ -74,6 +79,20 @@ public class MuseoService{
 		artistaRepository.delete(artista);
 	}
 	
+	@Transactional
+	public Opera aggiungiOpera(Opera opera) {
+		return operaRepository.save(opera);
+	}
+	
+	@Transactional
+	public void rimuoviOpera(Opera opera) {
+		operaRepository.delete(opera);
+	}
+	
+	@Transactional
+	public List<Opera> getOpere(){
+		return (List<Opera>)operaRepository.findAll();
+	}
 	
 	@Transactional
 	public boolean alreadyExists(Artista artista) {

@@ -14,13 +14,13 @@ public class Opera {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@Column(nullable = false)
+	@Column
 	private String titolo;
 	
-	@Column(nullable = false)
+	@Column
 	private int annoDiRealizzazione;
 	
-	@Column(nullable = false)
+	@Column
 	private String descrizione;
 	
 	@ManyToOne

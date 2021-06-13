@@ -1,43 +1,20 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-	<meta charset="UTF-8" />
-	<link href="/css/my-style.css" rel="stylesheet">
-	<title>Dettagli opera</title>
-</head>
+<head th:replace="fragments/components.html :: headerfiles(title=#{title.operaForm})"> </head>
 <body>
-    <div>
-    	<h4>Dettagli opera</h4>
-    </div>
+	<form th:action="@{/opera}" method="POST" th:object="${opera}">
+		<div th:if="${#fields.hasGlobalErrors()}">
+  			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
+		</div>
+  		<div>
+      		<span>Titolo:</span>
+      		<span><input type="text" th:field="*{titolo}"></span>
+      		<span th:if="${#fields.hasErrors('titolo')}" th:errors="*{titolo}"></span>
+  		</div>
 
-<form th: action= "@{/opera}" method="POST" th:object = "${opera}">
-  <div th:if="${#fields.hasGlobalErrors()}">
-    <p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
-</div>		
-  <div>
-      <span>Titolo: </span>
-      <span> <input type="text" th:field = "*{titolo}"></span>
-      <span> <th :if = "${#fields.hasErrors('titolo')}" th errors = "*{titolo}"></span>
-  </div>
-
-  <div>
-      <span>Data di realizzazione: </span>
-      <span> <input type ="text" th: field ="*{annoDiRealizzazione}"></span>
-      <span> <th: if = "${#fields.hasErrors('annoDiRealizzazione')}" th errors = "*{annoDiRealizzazione}"></th:></span>
-  </div>
-
-  <div>
-      <span>Descrizione: </span>
-      <span> <input type ="text" th: field ="*{descrizione}"></span>
-      <span> <th: if = "${#fields.hasErrors('descrizione')}" th errors = "*{descrizione}"></th:></span>
-  </div>
-
-  <div>
-      <span><button type="submit"> Invio </button></span>
-      <span><button type="button"> Annulla</button></span>
-  </div>
-
-</form>
-   <footer><a href="index.html">Home</a></footer>
+  		<div>
+      		<span><button type="submit">Invio</button></span>
+  		</div>
+	</form>
 </body>
 </html>
