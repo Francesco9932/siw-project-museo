@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/components.html :: headerfiles(title=#{title.artistaForm})"> </head>
+<head th:replace="fragments/components.html :: headerfiles(title=#{pageTitle.artistaForm})"> </head>
 <body>
 	<form th:action="@{/artista}" method="POST" th:object="${artista}">	
 		<div th:if="${#fields.hasGlobalErrors()}">
