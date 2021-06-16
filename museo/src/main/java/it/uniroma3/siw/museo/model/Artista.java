@@ -11,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 public class Artista {
 	
@@ -24,12 +26,14 @@ public class Artista {
 	@Column
 	private String cognome;
 	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column
 	private LocalDate dataDiNascita;
 	
 	@Column
 	private String luogoDiNascita;
 	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column
 	private LocalDate dataDiMorte;
 	
@@ -38,6 +42,9 @@ public class Artista {
 	
 	@Column
 	private String nazionalita;
+	
+	@Column
+	private String descrzione;
 	
 	@OneToMany(mappedBy = "artista")
 	private List<Opera> opere;
@@ -108,5 +115,21 @@ public class Artista {
 
 	public void setOpere(List<Opera> opere) {
 		this.opere = opere;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getDescrzione() {
+		return descrzione;
+	}
+
+	public void setDescrzione(String descrzione) {
+		this.descrzione = descrzione;
 	}
 }

@@ -4,13 +4,13 @@
 <head th:replace="fragments/components.html :: headerfiles(title=#{pageTitle.artista})"></head>
 
 <body>
-    <div class="container-artist-information">
+    <div th:object="${artista}" class="container-artist-information">
         <!--nome e cognome dell'artista-->
-        <h2>Vincent van Gogh</h2>
+        <h2 th:text="|${artista.nome} ${artista.cognome}|">Vincent van Gogh</h2>
         <!--data e luogo di nascita, data e luogo di morte dell'artista-->
-        <h5>Zundert, 30 marzo 1853 – Auvers-sur-Oise, 29 luglio 1890</h5>
+        <h5 th:text="|${artista.luogoDiNascita}, ${artista.dataDiNascita} - ${artista.luogoDiMorte}, ${artista.dataDiMorte}|">Zundert, 30 marzo 1853 – Auvers-sur-Oise, 29 luglio 1890</h5>
         <!--nazionalità dell'artista-->
-        <h6>Nazionalità: Olanda</h6>
+        <h6 th:text="${artista.nazionalita}">Olanda</h6>
         <div class="container-artist-image">
             <img class="artist-image" src="/images/VanGogh_1887_Selbstbildnis.jpg"
                 alt="Impossibile caricare immagine artista">

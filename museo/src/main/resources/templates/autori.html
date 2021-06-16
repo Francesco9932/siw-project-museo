@@ -6,8 +6,8 @@
     <nav th:replace = "fragments/components.html :: navbar"></nav>
     <ul>
         <li th:each="artista : ${artisti}">
-            <a href="artista.html" th:href="@{'/artista' + '/' + ${artista.id}}" 
-            th:text="|${artista.nome} ${artista.cognome}|">Nome cognome</a>
+            <a href="artista.html" th:href="@{'/artista' + '/' + ${artista.id}}" 
+             th:text="|${artista.nome} ${artista.cognome}|">Nome cognome</a>
         </li>
     </ul>    
     <footer th:replace = "fragments/components.html :: footer"></footer>

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -48,5 +49,11 @@ public class ArtistaController {
 	public String getArtisti(Model model) {
 		model.addAttribute("artisti",this.museoService.getArtisti());
 		return "autori.html";
+	}
+	
+	@RequestMapping(value = "/artista/{id}", method = RequestMethod.GET)
+	public String getArtista(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("artista",this.museoService.getArtistaPerId(id));
+		return "artista.html";
 	}
 }
