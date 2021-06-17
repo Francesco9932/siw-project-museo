@@ -1,53 +1,92 @@
-.Navbar {
-    background-color: rgb(20, 20, 20);
+html{
+	font-size: 100%;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-image-museo{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-opere-museo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar {
+    background-color: rgb(5, 103, 252);
     display: flex;
     justify-content: center;
 }
 
-.Navbar a {
-    color: rgb(242, 242, 242);
+@media only screen and (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+}
+}
+
+
+.navbar a {
+    color: white;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 1.5rem;
     height: 30px;
     text-align: center;
     padding: 15px 15px;
 }
 
-.Navbar a.active {
-    background-color: rgb(128, 128, 128);
-    color: black;
+.navbar a.active {
+    background-color: black;
 }
 
-.Navbar a:hover {
-    background-color: rgb(128, 128, 128);
-    color: black;
+.navbar a:hover {
+    background-color: black
 }
 
-Footer {
-    background-color: rgb(20, 20, 20);
-    height: 20vh;
+footer {
+    background-color: rgb(5, 103, 252);
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 1000px) {
+   footer{
+    flex-direction: column;
+    height: 250px;
+    justify-content: center;
+}
+.footer-social{
+    justify-content: center;
+}
 }
 
 .footer-text{
+	display:flex;
     color: white;
     text-align: center;
+    align-items: center;
+    font-size: 1.2rem;
+    margin:5px;
 }
 
 .footer-social{
     display: flex;
     text-decoration: none;
+    align-items: center;
+    margin:5px;
 }
 .social-icon{
-    width: 50%;
-    height: auto;
-}
-
-.footer-content {
-    display: flex;
-    padding-top: 5vh;
-    padding-right: 3vw;
-    padding-left: 3vw;
-    justify-content: space-between;
+    width:40px;
+    height:40px;
 }
 
 .artist-image{
