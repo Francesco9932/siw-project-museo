@@ -19,45 +19,48 @@ public class AutenticazioneController {
 
 	@Autowired
 	private CredenzialiService credenzialiService;
-	
+
 	@Autowired
 	private UserValidator userValidator;
-	
+
 	@Autowired
 	private CredenzialiValidator credenzialiValidator;
-	
+
 	@RequestMapping(value = "/register", method =RequestMethod.GET)
-		public String mostraRegistrazioneForm(Model model) {
-			model.addAttribute("user", new User());
-			model.addAttribute("credenziali", new Credenziali());
-			return "registrazione.html";
-		}
-	
+	public String mostraRegistrazioneForm(Model model) {
+		model.addAttribute("user", new User());
+		model.addAttribute("credenziali", new Credenziali());
+		return "registrazione.html";
+	}
+
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String mostraLoginForm(Model model) {
 		return "loginForm.html";
 	}
-	
+
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logut(Model model) {
 		return "index.html";
 	}
-	
+
 	@RequestMapping(value = "/default", method = RequestMethod.POST)
 	public String defaultLogin(Model model) {
 		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-	Credenziali credenziali = credenzialiService.getCredenziali(userDetails.getUsername());
-	if(credenziali.getRuolo().equals(Credenziali.ADMIN_RUOLO)) {
-		return "home.html";
+		Credenziali credenziali = credenzialiService.getCredenziali(userDetails.getUsername());
+		if(credenziali.getRuolo().equals(Credenziali.ADMIN_RUOLO)) {
+			return "home.html";
+		}
+		return "index.html";
 	}
-	return "home.html";
-	}
-	
+
 	@RequestMapping(value ="/register", method = RequestMethod.POST)
-	public String registrazioneUser(@ModelAttribute("user") User user, BindingResult userBindingResult, @ModelAttribute("credenziali") Credenziali credenziali, BindingResult credenzialiBindingResult, Model model) {
+	public String registrazioneUser(@ModelAttribute("user") User user, BindingResult userBindingResult, 
+			@ModelAttribute("credenziali") Credenziali credenziali, 
+			BindingResult credenzialiBindingResult, Model model) {
+		
 		this.userValidator.validate(user, userBindingResult);
 		this.credenzialiValidator.validate(credenziali, credenzialiBindingResult);
-		
+
 		if(!userBindingResult.hasErrors() && !credenzialiBindingResult.hasErrors()) {
 			credenziali.setUser(user);
 			credenzialiService.salvaCredenziali(credenziali);
@@ -65,7 +68,5 @@ public class AutenticazioneController {
 		}
 		return "registrazione.html";
 	}
-	
-
-	}
+}
 

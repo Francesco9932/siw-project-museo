@@ -26,7 +26,7 @@ public class CredenzialiValidator implements Validator {
     	
     	Credenziali credenziali = (Credenziali) o;
     	
-    	String username = credenziali.getUserName().trim();
+    	String username = credenziali.getUsername().trim();
     	String password  =credenziali.getPassword().trim();
     	
     	if (username.isEmpty())

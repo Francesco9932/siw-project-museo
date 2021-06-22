@@ -11,7 +11,7 @@ import javax.persistence.OneToOne;
 @Entity
 public class Credenziali {
 	
-	public static final String DEFAULT_RUOLO = "DEFAULT";
+	public static final String DEFAULT_RUOLO = "UTENTE";
 	public static final String ADMIN_RUOLO = "ADMIN";
 	
 	@Id
@@ -38,11 +38,11 @@ public class Credenziali {
 		this.id = id;
 	}
 
-	public String getUserName() {
+	public String getUsername() {
 		return username;
 	}
 
-	public void setEmail(String username) {
+	public void setUsername(String username) {
 		this.username = username;
 	}
 
@@ -69,6 +69,4 @@ public class Credenziali {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
-	
 }
