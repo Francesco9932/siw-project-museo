@@ -1,4 +1,4 @@
-package it.uniroma3.siw.museo.service;
+package it.uniroma3.siw.museo.authentication;
 
 import static it.uniroma3.siw.museo.model.Credenziali.ADMIN_RUOLO;
 
