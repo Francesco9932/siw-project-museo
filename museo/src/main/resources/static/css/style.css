@@ -1,54 +1,62 @@
-html{
+*{
+	box-sizing: border-box;
 	font-size: 100%;
     margin: 0px;
     padding: 0px;
-    text-align: center;
 }
 
 body {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	background-color: rgb(255, 255, 255);
 }
 
-.container-image-museo{
-	display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container-opere-museo{
+header{
+	background-color: rgb(5, 103, 252);
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding: 30px 5%;
 }
 
 .navbar {
-    background-color: rgb(5, 103, 252);
-    display: flex;
-    justify-content: center;
+	list-style: none;
+	padding: 0px 50px;
 }
 
-@media only screen and (max-width: 600px) {
-  .navbar {
-    flex-direction: column;
+.navbar li{
+	display: inline-block;
+	padding: 0px 20px;
 }
-}
-
 
 .navbar a {
     color: white;
     text-decoration: none;
     font-size: 1.5rem;
-    height: 30px;
-    text-align: center;
-    padding: 15px 15px;
-}
-
-.navbar a.active {
-    background-color: black;
 }
 
 .navbar a:hover {
-    background-color: black
+    color:deepskyblue
+}
+
+#museoTitle{
+	font-size: 1.5rem;
+	color: white;
+}
+
+#registrati{
+	font-size: 2.5rem;
+	color: rgb(5, 103, 252);
+	text-decoration: none;
+	padding: 30px 30px;
+	text-align: center;
+}
+
+#registrazioneEffettuata{
+	font-size: 2.5rem;
+	color: rgb(5, 103, 252);
+	text-decoration: none;
+	padding: 30px 30px;
+	text-align: center;
 }
 
 footer {
@@ -56,17 +64,6 @@ footer {
     height: 150px;
     display: flex;
     justify-content: space-between;
-}
-
-@media only screen and (max-width: 1000px) {
-   footer{
-    flex-direction: column;
-    height: 250px;
-    justify-content: center;
-}
-.footer-social{
-    justify-content: center;
-}
 }
 
 .footer-text{
@@ -89,18 +86,21 @@ footer {
     height:40px;
 }
 
+.container-image-museo{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-testo-museo{
+	text-align: start;
+	font-size: 1.5rem;
+	padding: 30px 30px;
+}
+
 .artist-image{
     width: 400px;
     height: 400px;
-}
-
-.opera-image{
-    width: 300px;
-    height: 300px;
-}
-.immagine-opera-museo{
-    width: 300px;
-    height: 300px;
 }
 .container-collezione{
     display: flex;
@@ -108,6 +108,7 @@ footer {
     align-items: center;
     justify-content: center;
 }
+
 .item-collezione{
     display: flex;
     flex-direction: column;

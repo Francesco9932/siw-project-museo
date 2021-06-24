@@ -2,5 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/components.html :: headerfiles(title=#{pageTitle.registrazione})"> </head>
 <body>
-<h1>REGISTRAZIONE EFFETTUATA</h1>
+	<nav th:replace = "/fragments/components.html :: navbar"></nav>
+	
+	<h1 id="registrazioneEffettuata">REGISTRAZIONE EFFETTUATA</h1>
+	
+	<footer th:replace = "/fragments/components.html :: footer"></footer>
 </body>

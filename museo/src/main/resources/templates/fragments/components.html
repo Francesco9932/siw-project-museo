@@ -8,14 +8,18 @@
 </head>
 
 <body>
-  <nav th:fragment = "navbar">
-    <div class="navbar">
-      <a class="active" th:href="@{/}">Home</a>
-      <a href = "/artista">Autori</a>
-      <a href="/collezioni">Collezioni</a>
-      <a href="/informazioni">Informazioni</a>
-    </div>
-  </nav>
+	<header th:fragment = "navbar">
+		<h1 id="museoTitle">MUSEOFANTASMAGORICO</h1>
+		<nav>
+    		<ul class="navbar">
+      			<li><a class="active" th:href="@{/}">Home</a></li>
+      			<li><a href = "/artista">Autori</a></li>
+      			<li><a href="/collezioni">Collezioni</a></li>
+      			<li><a href="/informazioni">Informazioni</a></li>
+   			</ul>
+  		</nav>
+	</header>
+  
 
   <footer th:fragment = "footer">
         <div class="footer-text">
@@ -39,5 +43,4 @@
         </div>
 </footer>
 </body>
-
 </html>
