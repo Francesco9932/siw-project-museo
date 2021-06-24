@@ -61,6 +61,15 @@ public class MuseoService{
 	}
 	
 	@Transactional
+	public Artista getArtistaPerNomeECognome(String nome, String cognome){
+		Optional<Artista> optional = artistaRepository.findByNomeAndCognome(nome,cognome);
+		if (optional.isPresent())
+			return optional.get();
+		else 
+			return null;
+	}
+	
+	@Transactional
 	public Artista getArtistaPerId(Long id){
 		Optional<Artista> optional = artistaRepository.findById(id);
 		if (optional.isPresent())
@@ -88,6 +97,16 @@ public class MuseoService{
 	public void rimuoviOpera(Opera opera) {
 		operaRepository.delete(opera);
 	}
+	
+	@Transactional
+	public Opera getOperaPerTitolo(String titolo) {
+		Optional<Opera> optional = this.operaRepository.getOperaByTitolo(titolo);
+		
+		if(optional.isPresent())
+			return optional.get();
+		else 
+			return null;
+ 	}
 	
 	@Transactional
 	public List<Opera> getOpere(){

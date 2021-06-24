@@ -4,6 +4,7 @@
 <head th:replace="fragments/components.html :: headerfiles(title=#{pageTitle.artista})"></head>
 
 <body>
+	<a href = "/removeArtista"> rimuoviArtista </a>
     <div th:object="${artista}" class="container-artist-information">
         <!--nome e cognome dell'artista-->
         <h2 th:text="|${artista.nome} ${artista.cognome}|">Vincent van Gogh</h2>

@@ -57,4 +57,10 @@ public class ArtistaController {
 		model.addAttribute("artista",this.museoService.getArtistaPerId(id));
 		return "artista.html";
 	}
+
+	@RequestMapping(value = "/removeArtista", method = RequestMethod.POST)
+	public String removeArtista(@ModelAttribute("artista") Artista artista, Model model) {
+		this.museoService.rimuoviArtista(artista);
+		return "autori.html";
+	}
 }
