@@ -84,8 +84,8 @@ public class MuseoService{
 	}
 	
 	@Transactional
-	public void rimuoviArtista(Artista artista) {
-		artistaRepository.delete(artista);
+	public void rimuoviArtista(Long id) {
+		artistaRepository.deleteById(id);
 	}
 	
 	@Transactional
