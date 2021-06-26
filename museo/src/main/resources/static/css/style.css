@@ -114,3 +114,36 @@ footer {
     flex-direction: column;
     padding: 10px;
 }
+.container-artist-description{
+	display: flex;
+	align-items: center;
+	text-align: start;
+	padding: 1px 30px;
+}
+.container-artist-information{
+	display:flex;
+	padding: 20px 20px;
+}
+.artist-information{
+	text-align: center;
+}
+.artist-information h2{
+	font-size: 3rem;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.container-opere{
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px 20px;
+}
+.opera-image{
+	width:400px;
+	height:300px;
+}
+.artisti-ul{
+	text-align: center;
+}
+.artista-a{
+	text-decoration: none;
+}
