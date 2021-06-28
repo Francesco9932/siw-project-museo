@@ -4,12 +4,16 @@
 </head>
 <body>
     <nav th:replace = "fragments/components.html :: navbar"></nav>
-    <ul class="artisti-ul">
-        <li th:each="artista : ${artisti}">
-            <a class"artista-a" href="artista.html" th:href="@{'/artista' + '/' + ${artista.id}}" 
+    <div class="container-autori">
+    	<h1>Artisti:</h1>
+    	<ul class="artisti-ul">
+        	<li th:each="artista : ${artisti}">
+            <a href="artista.html" th:href="@{'/artista' + '/' + ${artista.id}}" 
              th:text="|${artista.nome} ${artista.cognome}|">Nome cognome</a>
-        </li>
-    </ul>    
+        	</li>
+    	</ul>
+    	<a href="/addArtista">aggiungi artista</a>
+    </div>
     <footer th:replace = "fragments/components.html :: footer"></footer>
 </body>
 </html>

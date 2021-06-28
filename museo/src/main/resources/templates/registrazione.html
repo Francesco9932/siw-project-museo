@@ -2,8 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/components.html :: headerfiles(title=#{pageTitle.registrazione})"> </head>
 <body>
-<h3>Registrazione </h3>
-<form th:action="@{/register}" method = "POST">
+<div class="container-form">
+	<h1>Registrazione </h1>
+	<form th:action="@{/register}" method = "POST">
 	<table>
         <tr>
             <td>Username</td>
@@ -31,6 +32,6 @@
             </td>
         </tr>
     </table>
-
 </form>
+</div>
 </body>
