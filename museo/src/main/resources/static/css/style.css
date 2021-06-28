@@ -150,7 +150,7 @@ footer {
 .artisti-ul li a{
 	text-decoration: none;
 }
-.container-autori{
+.container-artisti{
 	padding: 10px 0px;
 	display:flex;
 	justify-content: center;
@@ -169,4 +169,12 @@ form{
 	display:flex;
 	padding: 5px 0px;
 	text-align: start;
+}
+.container-collezioni{
+	padding: 10px 0px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-size: 1.4rem;
 }

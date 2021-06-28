@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/components.html :: headerfiles(title=#{title.collezioneForm})"> </head>
+<body>
+<div class="container-form">
+	<form th:action="@{/collezione}" method="POST" th:object="${collezione}">
+		<div th:if="${#fields.hasGlobalErrors()}">
+  			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
+		</div>
+  		<div>
+      		<span>Titolo:</span>
+      		<span><input type="text" th:field="*{nome}"></span>
+      		<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+  		</div>
+  		<div>
+      		<span><button type="submit">Invio</button></span>
+  		</div>
+	</form>
+</div>
+</body>
+</html>

@@ -3,8 +3,16 @@
 <head th:replace="/fragments/components.html :: headerfiles(title=#{pageTitle.museo})"></head>
 
 <body>
-  <nav th:replace = "/fragments/components.html :: navbar"></nav>
-
-  <footer th:replace = "/fragments/components.html :: footer"></footer>
+  	<nav th:replace = "/fragments/components.html :: navbar"></nav>
+  	<div class="container-collezioni">
+  		<a href="/addCollezione">aggiungi collezione</a>
+  		<ul>
+  			<li th:each="collezione : ${collezioni}">
+  				<a href="collezione.html" th:href="@{'/collezione' + '/' + ${collezione.id}}" 
+  					th:text="${collezione.nome}">Nome Cognome</a>
+  			</li>
+  		</ul>
+  	</div>
+  	<footer th:replace = "/fragments/components.html :: footer"></footer>
 </body>
 </html>

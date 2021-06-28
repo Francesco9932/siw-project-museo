@@ -19,10 +19,10 @@ public class Collezione {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@Column(nullable = false)
+	@Column()
 	private String nome;
 	
-	@Column(nullable = false)
+	@Column()
 	private String descrizione;
 	
 	@ManyToOne()
@@ -74,5 +74,4 @@ public class Collezione {
 	public void setOpere(List<Opera> opere) {
 		this.opere = opere;
 	}
-	
 }
