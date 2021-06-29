@@ -46,6 +46,9 @@ public class Artista {
 	@Column
 	private String descrzione;
 	
+	@Column
+	private String immagine;
+	
 	@OneToMany(mappedBy = "artista")
 	private List<Opera> opere;
 	
@@ -131,5 +134,13 @@ public class Artista {
 
 	public void setDescrzione(String descrzione) {
 		this.descrzione = descrzione;
+	}
+
+	public String getImmagine() {
+		return immagine;
+	}
+
+	public void setImmagine(String immagine) {
+		this.immagine = immagine;
 	}
 }

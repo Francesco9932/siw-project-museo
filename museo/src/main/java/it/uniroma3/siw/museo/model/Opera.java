@@ -23,6 +23,9 @@ public class Opera {
 	@Column
 	private String descrizione;
 	
+	@Column
+	private String immagine;
+	
 	@ManyToOne
 	private Collezione collezione;
 	
@@ -75,5 +78,13 @@ public class Opera {
 
 	public void setArtista(Artista artista) {
 		this.artista = artista;
+	}
+
+	public String getImmagine() {
+		return immagine;
+	}
+
+	public void setImmagine(String immagine) {
+		this.immagine = immagine;
 	}
 }
