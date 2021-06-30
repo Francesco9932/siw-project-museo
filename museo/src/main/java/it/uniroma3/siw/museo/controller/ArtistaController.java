@@ -28,14 +28,14 @@ public class ArtistaController {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 
-	@RequestMapping(value = "/addArtista", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/addArtista", method = RequestMethod.GET)
 	public String addArtista(Model model) {
 		logger.debug("addArtista");
 		model.addAttribute("artista", new Artista());
 		return "artistaForm.html";
 	}
 
-	@RequestMapping(value = "/artista", method = RequestMethod.POST)
+	@RequestMapping(value = "/admin/artista", method = RequestMethod.POST)
 	public String newPersona(@ModelAttribute("artista") Artista artista, 
 			Model model, BindingResult bindingResult) {
 		this.artistaValidator.validate(artista,bindingResult);

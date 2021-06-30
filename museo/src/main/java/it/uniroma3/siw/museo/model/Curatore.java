@@ -12,33 +12,33 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Dipendente {
+public class Curatore {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long matricola;
 	
-	@Column(nullable = false)
+	@Column()
 	private String nome;
 	
-	@Column(nullable = false)
+	@Column()
 	private String cognome;
 	
-	@Column(nullable = false)
+	@Column()
 	private LocalDate dataDiNascita;
 	
-	@Column(nullable = false)
+	@Column()
 	private String luogoDiNascita;
 	
-	@Column(nullable = false)
+	@Column()
 	private String email;
 	
-	@Column(nullable = false)
+	@Column()
 	private String telefono;
 	
 	@OneToMany(mappedBy = "curatore")
 	private List<Collezione> collezioni;
 	
-	public Dipendente() {
+	public Curatore() {
 		collezioni = new ArrayList<Collezione>();
 	}
 

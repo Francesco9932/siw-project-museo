@@ -22,13 +22,13 @@ public class CollezioneController {
 		return "collezioni.html";
 	}
 	
-	@RequestMapping(value="/addCollezione",method=RequestMethod.GET)
+	@RequestMapping(value="/admin/addCollezione",method=RequestMethod.GET)
 	public String addCollezione(Model model) {
 		model.addAttribute("collezione",new Collezione());
 		return "collezioneForm.html";
 	}
 	
-	@RequestMapping(value="/collezione",method=RequestMethod.POST)
+	@RequestMapping(value="/admin/collezione",method=RequestMethod.POST)
 	public String newCollezione(@ModelAttribute("collezione") Collezione collezione, Model model) {
 		this.museoService.aggiungiCollezione(collezione);
 		return "index.html";

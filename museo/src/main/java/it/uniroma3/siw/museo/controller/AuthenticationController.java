@@ -1,4 +1,4 @@
-package it.uniroma3.siw.museo.controller.validator;
+package it.uniroma3.siw.museo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -10,22 +10,24 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import it.uniroma3.siw.museo.controller.validator.CredenzialiValidator;
+import it.uniroma3.siw.museo.controller.validator.UserValidator;
 import it.uniroma3.siw.museo.model.Credenziali;
 import it.uniroma3.siw.museo.model.User;
 import it.uniroma3.siw.museo.service.CredenzialiService;
 
 @Controller
-public class AutenticazioneController {
-
+public class AuthenticationController {
+	
 	@Autowired
 	private CredenzialiService credenzialiService;
-
+	
 	@Autowired
 	private UserValidator userValidator;
-
+	
 	@Autowired
 	private CredenzialiValidator credenzialiValidator;
-
+	
 	@RequestMapping(value = "/register", method =RequestMethod.GET)
 	public String mostraRegistrazioneForm(Model model) {
 		model.addAttribute("user", new User());
@@ -42,17 +44,18 @@ public class AutenticazioneController {
 	public String logut(Model model) {
 		return "index.html";
 	}
-
-	@RequestMapping(value = "/default", method = RequestMethod.POST)
-	public String defaultLogin(Model model) {
-		UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		Credenziali credenziali = credenzialiService.getCredenziali(userDetails.getUsername());
-		if(credenziali.getRuolo().equals(Credenziali.ADMIN_RUOLO)) {
-			return "home.html";
-		}
-		return "index.html";
-	}
-
+	
+	@RequestMapping(value = "/default", method = RequestMethod.GET)
+    public String defaultAfterLogin(Model model) {
+        
+    	UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    	Credenziali credenziali = credenzialiService.getCredenziali(userDetails.getUsername());
+    	if (credenziali.getRuolo().equals(Credenziali.ADMIN_RUOLO)) {
+            return "admin/indexAdmin.html";
+        }
+        return "index.html";
+    }
+	
 	@RequestMapping(value ="/register", method = RequestMethod.POST)
 	public String registrazioneUser(@ModelAttribute("user") User user, BindingResult userBindingResult, 
 			@ModelAttribute("credenziali") Credenziali credenziali, 
@@ -69,4 +72,3 @@ public class AutenticazioneController {
 		return "registrazione.html";
 	}
 }
-

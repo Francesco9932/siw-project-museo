@@ -4,7 +4,7 @@
 <body>
 <div class="container-form">
 	<h1>Form artista</h1>
-	<form th:action="@{/artista}" method="POST" th:object="${artista}">	
+	<form th:action="@{/admin/artista}" method="POST" th:object="${artista}">	
 		<div th:if="${#fields.hasGlobalErrors()}">
   			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
 		</div>	

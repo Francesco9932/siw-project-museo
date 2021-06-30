@@ -3,7 +3,7 @@
 <head th:replace="fragments/components.html :: headerfiles(title=#{title.collezioneForm})"> </head>
 <body>
 <div class="container-form">
-	<form th:action="@{/collezione}" method="POST" th:object="${collezione}">
+	<form th:action="@{/admin/collezione}" method="POST" th:object="${collezione}">
 		<div th:if="${#fields.hasGlobalErrors()}">
   			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
 		</div>

@@ -26,7 +26,7 @@ public class Collezione {
 	private String descrizione;
 	
 	@ManyToOne()
-	private Dipendente curatore;
+	private Curatore curatore;
 	
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "collezione") //Eager = impaziente 
 	private List<Opera> opere;
@@ -59,11 +59,11 @@ public class Collezione {
 		this.descrizione = descrizione;
 	}
 
-	public Dipendente getCuratore() {
+	public Curatore getCuratore() {
 		return curatore;
 	}
 
-	public void setCuratore(Dipendente curatore) {
+	public void setCuratore(Curatore curatore) {
 		this.curatore = curatore;
 	}
 

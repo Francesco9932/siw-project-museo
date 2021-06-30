@@ -4,9 +4,20 @@
 
 <body>
   <nav th:replace = "/fragments/components.html :: navbar"></nav>
-  
-  <div id="registrati">
-  	<a th:href= "@{/register}">Registrati</a>
+  <div class="container-operazioni-amministratore">
+  	<h1 style="text-align: center;">Menu Amministratore</h1>
+  	<div class="operazioni-amministartore-item">
+  		<a href="/admin/addOpera">Aggiungi opera</a>
+  	</div>
+  	<div class="operazioni-amministartore-item">
+  		<a href="/admin/addArtista">Aggiungi artista</a>
+  	</div>
+  	<div class="operazioni-amministartore-item">
+  		<a href="/admin/addCollezione">Aggiungi collezione</a>
+  	</div>
+  	<div class="operazioni-amministartore-item">
+  		<a href="/admin/addCuratore">Aggiungi curatore</a>
+  	</div>
   </div>
   
   <div class="container-image-museo">
