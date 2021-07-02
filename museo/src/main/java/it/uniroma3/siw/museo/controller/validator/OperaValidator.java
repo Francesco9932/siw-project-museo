@@ -22,6 +22,7 @@ public class OperaValidator implements Validator{
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "descrizione", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "immagine", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "artista", "required");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "collezione", "required");
 
 		if (!errors.hasErrors()) {
 			if (this.museoService.alreadyExists((Opera)o)) {

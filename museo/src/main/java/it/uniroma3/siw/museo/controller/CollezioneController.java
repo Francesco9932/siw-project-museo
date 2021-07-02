@@ -42,4 +42,10 @@ public class CollezioneController {
 		}
 		return "collezioneForm.html";
 	}
+	
+	@RequestMapping(value = "/collezione/{id}", method = RequestMethod.GET)
+	public String getArtista(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("collezione",this.museoService.getCollezionePerId(id));
+		return "collezione.html";
+	}
 }

@@ -1,5 +1,6 @@
 package it.uniroma3.siw.museo.controller.validator;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
@@ -10,6 +11,7 @@ import it.uniroma3.siw.museo.service.MuseoService;
 
 @Component
 public class CollezioneValidator implements Validator {
+	@Autowired
 	private MuseoService museoService;
 	
 	@Override
@@ -19,9 +21,9 @@ public class CollezioneValidator implements Validator {
 
 	@Override
 	public void validate(Object target, Errors errors) {
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "titolo", "required");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nome", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "descrizione", "required");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "curatore", "required");
+		//ValidationUtils.rejectIfEmptyOrWhitespace(errors, "curatore", "required");
 
 		if (!errors.hasErrors()) {
 			if (this.museoService.alreadyExists((Collezione)target)) {

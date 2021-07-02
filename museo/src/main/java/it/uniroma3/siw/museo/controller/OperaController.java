@@ -39,9 +39,9 @@ public class OperaController {
 		return "operaForm.html";
 	}
 	
-	@RequestMapping(value="/getArtista/{id}", method=RequestMethod.GET)
-	public String getArtista(@PathVariable("id") Long id, Model model) {
-		model.addAttribute("artista",this.museoService.getArtistaPerId(id));
-		return "operaForm.html";
+	@RequestMapping(value="/opera/{id}", method=RequestMethod.GET)
+	public String getOpera(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("opera",this.museoService.getOperaPerId(id));
+		return "opera.html";
 	}
 }

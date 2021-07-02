@@ -52,7 +52,7 @@
 	
     <div class="container-opere">
         <div th:each="opera : ${artista.opere}">
-			<a href="opera.html"><img class = "opera-image" th:src="${opera.immagine}"
+			<a href="opera.html" th:href="'/opera' + '/' + ${opera.id}"><img class = "opera-image" th:src="${opera.immagine}"
                 alt="Impossibile caricare immagine dell'opera"></a>
             <p th:text="${opera.descrizione}">descrizione</p>
 		</div>

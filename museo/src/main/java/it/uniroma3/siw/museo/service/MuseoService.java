@@ -99,6 +99,15 @@ public class MuseoService{
 	}
 	
 	@Transactional
+	public Opera getOperaPerId(Long id) {
+		Optional<Opera> optional = operaRepository.findById(id);
+		if (optional.isPresent())
+			return optional.get();
+		else 
+			return null;
+	}
+	
+	@Transactional
 	public void rimuoviOpera(Opera opera) {
 		operaRepository.delete(opera);
 	}

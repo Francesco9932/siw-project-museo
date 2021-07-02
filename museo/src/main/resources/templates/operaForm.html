@@ -36,6 +36,11 @@
       			<span th:if="${#fields.hasErrors('artista')}" th:errors="*{artista.id}"></span>
   			</div>
   			<div>
+      			<span>id collezione:</span>
+      			<span><input type="text" th:field="*{collezione.id}"></span>
+      			<span th:if="${#fields.hasErrors('collezione')}" th:errors="*{collezione.id}"></span>
+  			</div>
+  			<div>
       			<span><button type="submit">Invio</button></span>
   			</div>
 		</div>

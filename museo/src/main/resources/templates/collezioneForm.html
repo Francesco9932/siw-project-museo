@@ -17,11 +17,13 @@
       		<span><input type="text" th:field="*{descrizione}"></span>
       		<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>
   		</div>
+  		<!--
   		<div>
       		<span>Curatore:</span>
-      		<span><input type="text" th:field="*{curatore.id}"></span>
-      		<span th:if="${#fields.hasErrors('curatore')}" th:errors="*{curatore.id}"></span>
+      		<span><input type="text" th:field="*{curatore.matricola}"></span>
+      		<span th:if="${#fields.hasErrors('curatore')}" th:errors="*{curatore.matricola}"></span>
   		</div>
+  		!-->
   		
   		<div>
       		<span><button type="submit">Invio</button></span>

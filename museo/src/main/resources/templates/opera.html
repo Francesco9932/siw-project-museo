@@ -1,14 +1,8 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Opera</title>
-</head>
-
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/components.html :: headerfiles(title=#{pageTitle.opera})"></head>
 <body>
+	<nav th:replace = "fragments/components.html :: navbar"></nav>
     <div class="container-opera">
         <img src="/images/opera_vangog_1.jpg" alt="Impossibile caricare l'immagine">
 
@@ -17,6 +11,7 @@
         
         <div class="accordion-body">Notte stellata di Vincent van Gogh è uno degli ultimi inquietanti dipinti che realizzò l’artista prima di terminare tragicamente la sua vita </div>
     </div>
+    <footer th:replace = "fragments/components.html :: footer"></footer>
 </body>
 
 </html>
