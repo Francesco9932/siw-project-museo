@@ -55,16 +55,23 @@ footer {
     background-color: rgb(5, 103, 252);
     height: 150px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .footer-text{
 	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction:column;
     color: white;
     text-align: center;
     align-items: center;
     font-size: 1.2rem;
-    margin:5px;
+    margin:5px; 
+}
+
+.footer-text div{
+	display:flex;
 }
 
 .footer-social{
@@ -72,6 +79,14 @@ footer {
     text-decoration: none;
     align-items: center;
     margin:5px;
+}
+
+
+.footer-social li{
+    display: flex;
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 0 7px;
 }
 .social-icon{
     width:40px;
@@ -211,7 +226,7 @@ form{
 	font-size: 1.4rem;
 }
 .container-register{
-	font-size: 4rem;
+	font-size: 3.2rem;
 	display:flex;
 	padding-left: 200px;
 }
