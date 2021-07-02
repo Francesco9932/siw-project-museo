@@ -3,14 +3,15 @@
 <head th:replace="fragments/components.html :: headerfiles(title=#{title.operaForm})"> </head>
 <body>
 <div class="container-form">
-	<h1>Form opera</h1>
-	<form th:action="@{/admin/opera}" method="POST" th:object="${opera}">
+<div class = "container-style">
+  <legend class = "form-title"> Form Opera  </legend>
+ 	<form th:action="@{/admin/opera}" method="POST" th:object="${opera}">
 		<div th:if="${#fields.hasGlobalErrors()}">
   			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
 		</div>
 		<div>
 			<div>
-      			<span>Titolo:</span>
+      			<span >Titolo:</span>
       			<span><input type="text" th:field="*{titolo}"></span>
       			<span th:if="${#fields.hasErrors('titolo')}" th:errors="*{titolo}"></span>
   			</div>
@@ -39,6 +40,7 @@
   			</div>
 		</div>
 	</form>
+</div>
 </div>
 </body>
 </html>
