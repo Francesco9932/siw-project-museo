@@ -8,10 +8,21 @@
   			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
 		</div>
   		<div>
-      		<span>Titolo:</span>
+      		<span>Nome:</span>
       		<span><input type="text" th:field="*{nome}"></span>
       		<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
   		</div>
+  		<div>
+      		<span>Descrizione:</span>
+      		<span><input type="text" th:field="*{descrizione}"></span>
+      		<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>
+  		</div>
+  		<div>
+      		<span>Curatore:</span>
+      		<span><input type="text" th:field="*{curatore.id}"></span>
+      		<span th:if="${#fields.hasErrors('curatore')}" th:errors="*{curatore.id}"></span>
+  		</div>
+  		
   		<div>
       		<span><button type="submit">Invio</button></span>
   		</div>

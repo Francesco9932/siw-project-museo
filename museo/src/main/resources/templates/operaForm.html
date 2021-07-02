@@ -15,16 +15,24 @@
       			<span th:if="${#fields.hasErrors('titolo')}" th:errors="*{titolo}"></span>
   			</div>
   			<div>
+      			<span>Anno di realizzazione:</span>
+      			<span><input type="text" th:field="*{annoDiRealizzazione}"></span>
+      			<span th:if="${#fields.hasErrors('annoDiRealizzazione')}" th:errors="*{annoDiRealizzazione}"></span>
+  			</div>
+  			<div>
       			<span>Descrizione:</span>
       			<span><input type="text" th:field="*{descrizione}"></span>
+      			<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>
   			</div>
   			<div>
       			<span>URL immagine:</span>
       			<span><input type="text" th:field="*{immagine}"></span>
+      			<span th:if="${#fields.hasErrors('immagine')}" th:errors="*{immagine}"></span>
   			</div>
   			<div>
       			<span>id autore:</span>
       			<span><input type="text" th:field="*{artista.id}"></span>
+      			<span th:if="${#fields.hasErrors('artista')}" th:errors="*{artista.id}"></span>
   			</div>
   			<div>
       			<span><button type="submit">Invio</button></span>

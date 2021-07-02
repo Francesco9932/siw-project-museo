@@ -10,9 +10,11 @@ import org.springframework.stereotype.Service;
 
 import it.uniroma3.siw.museo.model.Artista;
 import it.uniroma3.siw.museo.model.Collezione;
+import it.uniroma3.siw.museo.model.Curatore;
 import it.uniroma3.siw.museo.model.Opera;
 import it.uniroma3.siw.museo.repository.ArtistaRepository;
 import it.uniroma3.siw.museo.repository.CollezioneRepository;
+import it.uniroma3.siw.museo.repository.CuratoreRepository;
 import it.uniroma3.siw.museo.repository.OperaRepository;
 
 @Service
@@ -25,6 +27,9 @@ public class MuseoService{
 	
 	@Autowired 
 	public OperaRepository operaRepository;
+	
+	@Autowired
+	public CuratoreRepository curatoreRepository;
 
 	@Transactional
 	public List<Collezione> getCollezioni(){
@@ -99,6 +104,16 @@ public class MuseoService{
 	}
 	
 	@Transactional
+	public Curatore aggiungiCuratore(Curatore curatore) {
+		return curatoreRepository.save(curatore);
+	}
+	
+	@Transactional
+	public void rimuoviCuratore(Long id) {
+		curatoreRepository.deleteById(id);
+	}
+	
+	@Transactional
 	public Opera getOperaPerTitolo(String titolo) {
 		Optional<Opera> optional = this.operaRepository.getOperaByTitolo(titolo);
 		
@@ -117,6 +132,33 @@ public class MuseoService{
 	public boolean alreadyExists(Artista artista) {
 		List<Artista> artisti = this.artistaRepository.findByNome(artista.getNome());
 		if (artisti.size() > 0)
+			return true;
+		else 
+			return false;
+	}
+	
+	@Transactional
+	public boolean alreadyExists(Opera opera) {
+		List<Opera> opere = this.operaRepository.findByTitolo(opera.getTitolo());
+		if (opere.size() > 0)
+			return true;
+		else 
+			return false;
+	}
+	
+	@Transactional
+	public boolean alreadyExists(Collezione collezione) {
+		List<Collezione> collezioni = this.collezioneRepository.findByNome(collezione.getNome());
+		if (collezioni.size() > 0)
+			return true;
+		else 
+			return false;
+	}
+	
+	@Transactional
+	public boolean alreadyExists(Curatore curatore) {
+		List<Curatore> curatori = this.curatoreRepository.findByNome(curatore.getNome());
+		if (curatori.size() > 0)
 			return true;
 		else 
 			return false;

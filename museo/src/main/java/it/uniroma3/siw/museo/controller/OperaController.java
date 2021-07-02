@@ -1,15 +1,15 @@
 package it.uniroma3.siw.museo.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import it.uniroma3.siw.museo.controller.validator.OperaValidator;
 import it.uniroma3.siw.museo.model.Opera;
 import it.uniroma3.siw.museo.service.MuseoService;
 
@@ -19,20 +19,24 @@ public class OperaController {
 	@Autowired
 	private MuseoService museoService;
 	
-	private final Logger logger = LoggerFactory.getLogger(this.getClass());
+	@Autowired
+	private OperaValidator operaValidator;
 	
 	@RequestMapping(value = "/admin/addOpera", method = RequestMethod.GET)
 	public String addOpera(Model model) {
-		logger.debug("addOpera");
 		model.addAttribute("opera", new Opera());
 		return "operaForm.html";
 	}
 	
 	@RequestMapping(value = "/admin/opera", method = RequestMethod.POST)
 	public String newOpera(@ModelAttribute("opera") Opera opera, 
-			Model model) {
-		this.museoService.aggiungiOpera(opera);
-		return "index.html";
+			Model model, BindingResult bindingResult) {
+		this.operaValidator.validate(opera,bindingResult);
+		if(!bindingResult.hasErrors()) {
+			this.museoService.aggiungiOpera(opera);
+			return "index.html";
+		}
+		return "operaForm.html";
 	}
 	
 	@RequestMapping(value="/getArtista/{id}", method=RequestMethod.GET)
