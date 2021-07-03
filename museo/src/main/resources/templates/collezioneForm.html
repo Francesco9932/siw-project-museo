@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/components.html :: headerfiles(title=#{title.collezioneForm})"> </head>
+<head th:replace="fragments/components.html :: headerfiles(title=#{pageTitle.collezioneForm})"> </head>
 <body>
 <div class="container-form">
-	<form th:action="@{/admin/collezione}" method="POST" th:object="${collezione}">
+	<h1>Form collezione</h1>
+	<form th:action="@{/admin/collezione}" method="POST" th:object="${collezione}">	
 		<div th:if="${#fields.hasGlobalErrors()}">
   			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
+		</div>	
+		<div>
+			<div>
+      			<span>Nome:</span>
+      			<span><input type="text" th:field="*{nome}"></span>
+      			<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+  			</div>
+  			<div>
+      			<span>Descrizione:</span>
+      			<span><input type="text" th:field="*{descrizione}"></span>
+      			<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>
+  			</div>
+  			<div>
+  				<span>Curatore:</span>
+  				<select th:field="*{curatore}">
+       				<option th:each="curatore: ${curatori}" th:value="${curatore.matricola}" th:text="${curatore.nome}"></option>
+    			</select>
+  			</div>
+			<div>
+				<span><button type="submit">Invio</button></span>
+			</div>
 		</div>
-  		<div>
-      		<span>Nome:</span>
-      		<span><input type="text" th:field="*{nome}"></span>
-      		<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
-  		</div>
-  		<div>
-      		<span>Descrizione:</span>
-      		<span><input type="text" th:field="*{descrizione}"></span>
-      		<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>
-  		</div>
-  		<!--
-  		<div>
-      		<span>Curatore:</span>
-      		<span><input type="text" th:field="*{curatore.matricola}"></span>
-      		<span th:if="${#fields.hasErrors('curatore')}" th:errors="*{curatore.matricola}"></span>
-  		</div>
-  		!-->
-  		
-  		<div>
-      		<span><button type="submit">Invio</button></span>
-  		</div>
 	</form>
 </div>
 </body>

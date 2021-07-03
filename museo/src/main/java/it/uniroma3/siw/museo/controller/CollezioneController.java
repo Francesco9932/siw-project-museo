@@ -19,30 +19,31 @@ public class CollezioneController {
 	private MuseoService museoService;
 	@Autowired
 	private CollezioneValidator collezioneValidator;
-	
+
 	@RequestMapping(value="/collezioni/{id}",method=RequestMethod.GET)
 	public String getCollezione(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("artista",museoService.getCollezionePerId(id));
 		return "collezioni.html";
 	}
-	
+
 	@RequestMapping(value="/admin/addCollezione",method=RequestMethod.GET)
 	public String addCollezione(Model model) {
 		model.addAttribute("collezione",new Collezione());
+		model.addAttribute("curatori",museoService.getCuratori());
 		return "collezioneForm.html";
 	}
-	
+
 	@RequestMapping(value="/admin/collezione",method=RequestMethod.POST)
 	public String newCollezione(@ModelAttribute("collezione") Collezione collezione, Model model, 
 			BindingResult bindingResult) {
 		this.collezioneValidator.validate(collezione, bindingResult);
 		if(!bindingResult.hasErrors()) {
-		this.museoService.aggiungiCollezione(collezione);
-		return "index.html";
+			this.museoService.aggiungiCollezione(collezione);
+			return "index.html";
 		}
 		return "collezioneForm.html";
 	}
-	
+
 	@RequestMapping(value = "/collezione/{id}", method = RequestMethod.GET)
 	public String getArtista(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("collezione",this.museoService.getCollezionePerId(id));

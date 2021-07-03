@@ -123,6 +123,11 @@ public class MuseoService{
 	}
 	
 	@Transactional
+	public List<Curatore> getCuratori(){
+		return (List<Curatore>)curatoreRepository.findAll();
+	}
+	
+	@Transactional
 	public Opera getOperaPerTitolo(String titolo) {
 		Optional<Opera> optional = this.operaRepository.getOperaByTitolo(titolo);
 		

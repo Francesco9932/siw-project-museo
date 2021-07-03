@@ -25,6 +25,7 @@ public class OperaController {
 	@RequestMapping(value = "/admin/addOpera", method = RequestMethod.GET)
 	public String addOpera(Model model) {
 		model.addAttribute("opera", new Opera());
+		model.addAttribute("artisti",museoService.getArtisti());
 		return "operaForm.html";
 	}
 	
