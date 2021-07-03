@@ -6,7 +6,7 @@
 <body>
 	<nav th:replace = "/fragments/components.html :: navbar"></nav>
 	
-	<div class="artist-information">
+	<div class="information">
 		<a th:href="@{'/removeArtista' + '/' + ${artista.id}}">rimuoviArtista</a>
 		<!--nome e cognome dell'artista-->
         <h2 th:text="|${artista.nome} ${artista.cognome}|">Vincent van Gogh</h2>

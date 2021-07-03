@@ -131,10 +131,10 @@ footer {
 	display:flex;
 	padding: 20px 20px;
 }
-.artist-information{
+.information{
 	text-align: center;
 }
-.artist-information h2{
+.information h2{
 	font-size: 3rem;
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }

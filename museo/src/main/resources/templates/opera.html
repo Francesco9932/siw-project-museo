@@ -3,14 +3,31 @@
 <head th:replace="fragments/components.html :: headerfiles(title=#{pageTitle.opera})"></head>
 <body>
 	<nav th:replace = "fragments/components.html :: navbar"></nav>
-    <div class="container-opera">
-        <img src="/images/opera_vangog_1.jpg" alt="Impossibile caricare l'immagine">
-
-
-        <h5 class="card-title">La notte stellata <a class="author" href="artista.html">(Vincent Van Gogh)</a></h5>
+    <div class="information">
+		<!--<a th:href="@{'/removeArtista' + '/' + ${artista.id}}">rimuoviArtista</a>-->
+        <h2 th:text="${opera.titolo}">Notte stellata</h2>
+	</div>
+	
         
-        <div class="accordion-body">Notte stellata di Vincent van Gogh è uno degli ultimi inquietanti dipinti che realizzò l’artista prima di terminare tragicamente la sua vita </div>
+    <div th:object="${opera}" class="container-artist-information">
+        <div class="container-artist-image">
+            <img class="artist-image" th:src="${opera.immagine}"
+                alt="Impossibile caricare immagine artista">
+        </div>
+
+        <div class="container-artist-description">
+            <p th:text="${opera.descrizione}">Un paesaggio di campagna nella notte. Le finestre sono illuminate dalle luci domestiche mentre la falce
+            di luna illumina un cielo nel quale si agitano turbini inquietanti. 
+            Sotto ad un cielo costellato di stelle, con una falce di luna in alto a destra, 
+            Vincent van Gogh dipinge un paesaggio di campagna. Al centro, in basso, 
+            si trova una chiesetta con un alto campanile. Intorno ad essa vi sono delle semplici case
+            di campagna con le finestre illuminate. Un grande cipresso interrompe il paesaggio a sinistra 
+            sotto la Notte stellata. Oltre il villaggio, a destra, si nota, invece, 
+            un fitto bosco che sembra abbattersi sul villaggio come un maremoto. Infine, 
+            all’orizzonte colline e montagne lontane, sembrano onde gigantesche in corsa verso le case.</p>
+        </div>
     </div>
+    
     <footer th:replace = "fragments/components.html :: footer"></footer>
 </body>
 

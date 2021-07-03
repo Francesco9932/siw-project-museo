@@ -26,6 +26,7 @@ public class OperaController {
 	public String addOpera(Model model) {
 		model.addAttribute("opera", new Opera());
 		model.addAttribute("artisti",museoService.getArtisti());
+		model.addAttribute("collezioni",museoService.getCollezioni());
 		return "operaForm.html";
 	}
 	

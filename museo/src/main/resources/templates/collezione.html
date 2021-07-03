@@ -5,23 +5,26 @@
 
 <body>
     <nav th:replace = "fragments/components.html :: navbar"></nav>
-	<div th:object="${collezione}">
-		<h1 th:text="*{nome}">Espressionismo</h1>
-		<h2>Curatore:</h2>
-		<h2 th:text="*{curatore.nome}"></h2>
-	</div>
-	
     
+	<div class="information" th:object="${collezione}">
+		<h2 th:text="*{nome}">Espressionismo</h2>
+		<h5 th:text="'Curatore:' + ' ' + *{curatore.nome}"></h5>
+	</div>
 
-    <div class="container-collezione">
-        <div class="item-collezione">
-            <img class="immagine-opera-museo" src="/images/opera_vangog_1.jpg">
+    <div class="container-opere">
+        <div th:each="opera : ${collezione.opere}">
+			<a href="opera.html" th:href="'/opera' + '/' + ${opera.id}"><img class = "opera-image" th:src="${opera.immagine}"
+                alt="Impossibile caricare immagine dell'opera"></a>
+            <p th:text="${opera.descrizione}">descrizione</p>
+		</div>
+    </div>
+    <!--
             <div>
                 <a href="opera.html">"La Notte Stellata"
                     <a href="artista.html">(Vincent Van Gogh)</a>
                 </a>
             </div>
-        </div>
+     
 
 
         <div class="item-collezione">
@@ -33,6 +36,7 @@
             </div>
         </div>
     </div>
+    --> 
     
     <footer th:replace = "fragments/components.html :: footer"> </footer>
     
