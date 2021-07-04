@@ -58,7 +58,7 @@ public class ArtistaController {
 		return "artista.html";
 	}
 
-	@RequestMapping(value = "/removeArtista/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/removeArtista/{id}", method = RequestMethod.GET)
 	public String removeArtista(@PathVariable("id") Long id, Model model) {
 		this.museoService.rimuoviArtista(id);
 		return "index.html";

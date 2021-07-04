@@ -52,4 +52,10 @@ public class OperaController {
 		model.addAttribute("opere",this.museoService.getOpere());
 		return "rimozioneOpera.html";
 	}
+	
+	@RequestMapping(value="/admin/removeOpera/{id}",method = RequestMethod.GET)
+	public String removeOpera(@PathVariable("id") Long id, Model model) {
+		museoService.rimuoviOpera(id);
+		return "index.html";
+	}
 }

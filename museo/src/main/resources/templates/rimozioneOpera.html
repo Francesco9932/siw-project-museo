@@ -7,7 +7,7 @@
   		<h1>Opere da rimuovere:</h1>
   		<ul>
   			<li th:each="opera : ${opere}">
-  				<a href="" th:text="${opera.titolo}">
+  				<a th:href="@{'/admin/removeOpera' + '/' + ${opera.id}}" th:text="${opera.titolo}">
   					<img th:src="${opera.immagine}">
   				</a>
   			</li>

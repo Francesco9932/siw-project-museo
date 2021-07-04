@@ -108,8 +108,8 @@ public class MuseoService{
 	}
 	
 	@Transactional
-	public void rimuoviOpera(Opera opera) {
-		operaRepository.delete(opera);
+	public void rimuoviOpera(Long id) {
+		operaRepository.deleteById(id);
 	}
 	
 	@Transactional
