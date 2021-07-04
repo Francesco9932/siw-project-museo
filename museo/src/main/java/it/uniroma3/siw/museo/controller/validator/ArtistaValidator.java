@@ -28,7 +28,7 @@ public class ArtistaValidator implements Validator {
 
 		if (!errors.hasErrors()) {
 			if (this.museoService.alreadyExists((Artista)o)) {
-				errors.reject("duplicato");
+				errors.reject("duplicatoArtista");
 			}
 		}
 	}

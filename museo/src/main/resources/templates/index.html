@@ -4,22 +4,12 @@
 
 <body>
   <nav th:replace = "/fragments/components.html :: navbar"></nav>
-  <!--
-  <div class="container-image-museo">
-    <img src="/images/museo_2.jpg" width="100%" height="100%" alt="...">
-  </div>
-  <div class="container-testo-museo">
-  	<h1>MUSEOFANTASMAGORICO</h1>
-  	<p>
-  	desc museo, desc museo desc museo, desc museo desc museo, desc museo desc museo, desc museo.
-  	desc museo, desc museo desc museo, desc museo desc museo, desc museo desc museo, desc museo.
-  	desc museo, desc museo desc museo, desc museo desc museo, desc museo desc museo, desc museo.
-  	desc museo, desc museo desc museo, desc museo desc museo, desc museo desc museo, desc museo.
-  	desc museo, desc museo desc museo, desc museo desc museo, desc museo desc museo, desc museo.
-  	desc museo, desc museo desc museo, desc museo desc museo, desc museo desc museo, desc museo.
-  	</p>
-  </div>
-  -->
+  
+  <div class="container-opere">
+        <div th:each="opera,iterStat : ${opere}" th:if="${iterStat.index}<5">
+			<img class = "opera-image" th:src="${opera.immagine}" alt="Impossibile caricare immagine dell'opera">
+		</div>
+    </div>
   <footer th:replace = "/fragments/components.html :: footer"></footer>
 </body>
 </html>

@@ -6,10 +6,10 @@
 <div class = "container-style">
 	<legend class = "form-title"> Form Curatore  </legend>
 	<form th:action="@{/admin/curatore}" method="POST" th:object="${curatore}">
-		<div th:if="${#fields.hasGlobalErrors()}">
-  			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
-		</div>	
 		<div class="flex-form">
+			<div th:if="${#fields.hasGlobalErrors()}">
+  				<p style="color: #e61919; font-size: 1.8rem; font-weight: bold;"th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
+			</div>
 			<div>
       			<span>Nome:</span>
       			<span><input type="text" th:field="*{nome}"></span>

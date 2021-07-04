@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/components.html :: headerfiles(title=#{title.operaForm})"> </head>
+<head th:replace="fragments/components.html :: headerfiles(title=#{pageTitle.operaForm})"> </head>
 <body>
 <div class="container-form">
 <div class = "container-style">
   <legend class = "form-title"> Form Opera  </legend>
  	<form th:action="@{/admin/opera}" method="POST" th:object="${opera}">
-		<div th:if="${#fields.hasGlobalErrors()}">
-  			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
-		</div>
 		<div class="flex-form">
+			<div th:if="${#fields.hasGlobalErrors()}">
+  				<p style="color: #e61919; font-size: 1.8rem; font-weight: bold;"th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
+			</div>
 			<div>
       			<span >Titolo:</span>
       			<span><input type="text" th:field="*{titolo}"></span>

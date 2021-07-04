@@ -29,7 +29,7 @@ public class CuratoreValidator implements Validator{
 
 		if (!errors.hasErrors()) {
 			if (this.museoService.alreadyExists((Curatore)o)) {
-				errors.reject("duplicato");
+				errors.reject("duplicatoCuratore");
 			}
 		}
 	}

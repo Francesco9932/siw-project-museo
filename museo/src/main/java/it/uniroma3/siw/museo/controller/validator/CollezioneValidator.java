@@ -23,11 +23,10 @@ public class CollezioneValidator implements Validator {
 	public void validate(Object target, Errors errors) {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nome", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "descrizione", "required");
-		//ValidationUtils.rejectIfEmptyOrWhitespace(errors, "curatore", "required");
 
 		if (!errors.hasErrors()) {
 			if (this.museoService.alreadyExists((Collezione)target)) {
-				errors.reject("duplicato");
+				errors.reject("duplicatoCollezione");
 			}
 		}
 	}

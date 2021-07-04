@@ -15,9 +15,12 @@ import it.uniroma3.siw.museo.controller.validator.UserValidator;
 import it.uniroma3.siw.museo.model.Credenziali;
 import it.uniroma3.siw.museo.model.User;
 import it.uniroma3.siw.museo.service.CredenzialiService;
+import it.uniroma3.siw.museo.service.MuseoService;
 
 @Controller
 public class AuthenticationController {
+	@Autowired
+	private MuseoService museoService;
 	
 	@Autowired
 	private CredenzialiService credenzialiService;
@@ -42,6 +45,7 @@ public class AuthenticationController {
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logut(Model model) {
+		model.addAttribute("opere",museoService.getOpere());
 		return "index.html";
 	}
 	
@@ -51,8 +55,10 @@ public class AuthenticationController {
     	UserDetails userDetails = (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     	Credenziali credenziali = credenzialiService.getCredenziali(userDetails.getUsername());
     	if (credenziali.getRuolo().equals(Credenziali.ADMIN_RUOLO)) {
+    		model.addAttribute("opere",museoService.getOpere());
             return "admin/indexAdmin.html";
         }
+    	model.addAttribute("opere",museoService.getOpere());
         return "index.html";
     }
 	
