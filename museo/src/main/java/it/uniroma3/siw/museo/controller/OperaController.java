@@ -46,4 +46,10 @@ public class OperaController {
 		model.addAttribute("opera",this.museoService.getOperaPerId(id));
 		return "opera.html";
 	}
+	
+	@RequestMapping(value="/admin/rimuoviOpera", method = RequestMethod.GET)
+	public String getOpereDaRimuovere(Model model){
+		model.addAttribute("opere",this.museoService.getOpere());
+		return "rimozioneOpera.html";
+	}
 }

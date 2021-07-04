@@ -4,12 +4,12 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -44,14 +44,13 @@ public class Artista {
 	@Column
 	private String nazionalita;
 	
-	@Lob //specifica che una proprietà persistente deve essere resa persistentem come un oggetto di grandi dimensioni
-	@Column()
+	@Column(length = 2000)
 	private String descrizione;
 	
 	@Column
 	private String immagine;
 	
-	@OneToMany(mappedBy = "artista")
+	@OneToMany(mappedBy = "artista", cascade = CascadeType.ALL)
 	private List<Opera> opere;
 	
 	public Artista() {

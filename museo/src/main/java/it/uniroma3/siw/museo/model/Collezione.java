@@ -9,7 +9,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -23,8 +22,7 @@ public class Collezione {
 	@Column()
 	private String nome;
 	
-	@Lob //specifica che una proprietà persistente deve essere resa persistentem come un oggetto di grandi dimensioni
-	@Column()
+	@Column(length = 2000)
 	private String descrizione;
 	
 	@ManyToOne()

@@ -63,4 +63,10 @@ public class ArtistaController {
 		this.museoService.rimuoviArtista(id);
 		return "index.html";
 	}
+	
+	@RequestMapping(value = "/admin/rimuoviArtista", method = RequestMethod.GET)
+	public String getArtistiDaRimuovere(Model model) {
+		model.addAttribute("artisti",this.museoService.getArtisti());
+		return "rimozioneArtista.html";
+	}
 }
