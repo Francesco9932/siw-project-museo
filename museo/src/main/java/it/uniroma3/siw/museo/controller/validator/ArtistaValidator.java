@@ -24,6 +24,7 @@ public class ArtistaValidator implements Validator {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "luogoDiNascita", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nazionalita", "required");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "immagine", "required");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "descrizione", "required");
 
 		if (!errors.hasErrors()) {
 			if (this.museoService.alreadyExists((Artista)o)) {

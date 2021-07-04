@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -43,8 +44,9 @@ public class Artista {
 	@Column
 	private String nazionalita;
 	
-	@Column
-	private String descrzione;
+	@Lob //specifica che una proprietà persistente deve essere resa persistentem come un oggetto di grandi dimensioni
+	@Column()
+	private String descrizione;
 	
 	@Column
 	private String immagine;
@@ -128,14 +130,6 @@ public class Artista {
 		this.id = id;
 	}
 
-	public String getDescrzione() {
-		return descrzione;
-	}
-
-	public void setDescrzione(String descrzione) {
-		this.descrzione = descrzione;
-	}
-
 	public String getImmagine() {
 		return immagine;
 	}
@@ -143,4 +137,12 @@ public class Artista {
 	public void setImmagine(String immagine) {
 		this.immagine = immagine;
 	}
+
+	public String getDescrizione() {
+		return descrizione;
+	}
+
+	public void setDescrizione(String descrizione) {
+		this.descrizione = descrizione;
+	}	
 }

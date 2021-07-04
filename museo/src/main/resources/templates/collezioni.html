@@ -5,6 +5,7 @@
 <body>
   	<nav th:replace = "/fragments/components.html :: navbar"></nav>
   	<div class="container-collezioni">
+  		<h1>Collezioni:</h1>
   		<ul>
   			<li th:each="collezione : ${collezioni}">
   				<a href="collezione.html" th:href="@{'/collezione' + '/' + ${collezione.id}}" 

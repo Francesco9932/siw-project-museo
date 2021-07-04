@@ -4,7 +4,14 @@
 
 <body>
   <nav th:replace = "/fragments/components.html :: navbar"></nav>
-	<p>Queste sono le informazioni del museo fantasmagorico!!!</p>
+  	<div class="container-information">
+  		<h1>Giorni e orari di apertura</h1>
+  		<h2>Dal lunedì al giovedì</h2>
+  		<p>8.30-18.30 (ultimo ingresso alle 16.30)</p>
+  		<h2>Venerdì e sabato</h2>
+  		<p>8.30-22.30 (ultimo ingresso alle 20.30)</p>
+  		<p>L'uscita dalle sale e' prevista 30 minuti prima della chiusura museale</p>
+  	</div>
   <footer th:replace = "/fragments/components.html :: footer"></footer>
 </body>
 </html>

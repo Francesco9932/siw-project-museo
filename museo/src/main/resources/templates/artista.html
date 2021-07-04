@@ -25,7 +25,7 @@
 
         <div class="container-artist-description">
             <!--biografia dell'artista-->
-            <p>Appartenente a una famiglia di orefici e mercanti d’arte, nacque da un pastore protestante.
+            <p th:text="${artista.descrizione}">Appartenente a una famiglia di orefici e mercanti d’arte, nacque da un pastore protestante.
                 Nel 1869 iniziò a lavorare per la casa d’arte Goupil, per la quale realizzava riproduzioni di opere
                 d’arte e grazie a cui nel 1873 fu trasferito prima a Bruxelles e poi a Londra. Nel 1875 giunse a Parigi
                 e l’anno seguente lasciò il lavoro e iniziò a insegnare nei pressi di Londra, dove prese anche a
@@ -48,7 +48,7 @@
         </div>
     </div>
 	
-	<h5 style="padding: 20px 20px;font-size: 1.5rem;">Le opere dell'artista:</h5>
+	<h5 style="padding: 50px 20px;font-size: 1.5rem; color: black;">Le opere dell'artista:</h5>
 	
     <div class="container-opere">
         <div th:each="opera : ${artista.opere}">

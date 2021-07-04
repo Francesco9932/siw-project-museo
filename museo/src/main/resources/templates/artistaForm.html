@@ -48,6 +48,11 @@
 				<span th:if="${#fields.hasErrors('immagine')}" th:errors="*{immagine}"></span>
 			</div>
 			<div>
+				<span>Descrizione:</span>
+				<span><input type="text" th:field="*{descrizione}" /></span>
+				<span th:if="${#fields.hasErrors('descrizione')}" th:errors="*{descrizione}"></span>
+			</div>
+			<div>
 				<span><button type="submit">Invio</button></span>
 			</div>
 		</div>
