@@ -5,13 +5,15 @@
 <body>
   	<div class="container-collezioni">
   		<h1>Collezione da rimuovere:</h1>
-  		<ul>
-  			<li th:each="collezione : ${collezioni}">
-  				<a th:href="@{'/admin/rimuoviCollezione' + '/' + ${collezione.id}}" 
-  					th:text="${collezione.nome}">
-  				</a>
-  			</li>
-  		</ul>
+  		<em>
+  			<ul>
+  				<li th:each="collezione : ${collezioni}">
+  					<a th:href="@{'/admin/rimuoviCollezione' + '/' + ${collezione.id}}" 
+  						th:text="${collezione.nome}">
+  					</a>
+  				</li>
+  			</ul>
+  		</em>
   	</div>
 </body>
 </html>

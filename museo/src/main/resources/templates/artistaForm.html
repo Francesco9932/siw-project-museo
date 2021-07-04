@@ -3,7 +3,8 @@
 <head th:replace="fragments/components.html :: headerfiles(title=#{pageTitle.artistaForm})"> </head>
 <body>
 <div class="container-form">
-	<h1>Form artista</h1>
+<div class = "container-style">
+	<legend class = "form-title"> Form Artista  </legend>
 	<form th:action="@{/admin/artista}" method="POST" th:object="${artista}">	
 		<div th:if="${#fields.hasGlobalErrors()}">
   			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
@@ -57,6 +58,7 @@
 			</div>
 		</div>
 	</form>
+</div>
 </div>
 </body>
 </html>

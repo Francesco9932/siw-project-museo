@@ -170,6 +170,7 @@ footer {
 }
 .container-opere div a{
 	display:flex;
+	color:white;
 }
 .container-opere div p{
 	display:flex;
@@ -215,11 +216,11 @@ footer {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	border-top: 25px solid #8b0000;
+	border-top: 25px solid rgb(123, 0, 44);
 	border-radius: 40px 40px 0px 0px;
-	border-left: 5px solid #8b0000;
-	border-right: 5px solid #8b0000;
-	border-bottom: 5px solid #8b0000;
+	border-left: 5px solid rgb(123, 0, 44);
+	border-right: 5px solid rgb(123, 0, 44);
+	border-bottom: 5px solid rgb(123, 0, 44);
 	padding: 20px;
 	}
 input{

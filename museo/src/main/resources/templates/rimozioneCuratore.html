@@ -5,13 +5,15 @@
 <body>
   	<div class="container-collezioni">
   		<h1>Curatore da rimuovere:</h1>
-  		<ul>
-  			<li th:each="curatore : ${curatori}">
-  				<a th:href="@{'/admin/rimuoviCuratore' + '/' + ${curatore.matricola}}" 
-  					th:text="${curatore.nome}">
-  				</a>
-  			</li>
-  		</ul>
+  		<em>
+  			<ul>
+	  			<li th:each="curatore : ${curatori}">
+  					<a th:href="@{'/admin/rimuoviCuratore' + '/' + ${curatore.matricola}}" 
+  						th:text="${curatore.nome}">
+  					</a>
+  				</li>
+  			</ul>
+  		</em>
   	</div>
 </body>
 </html>

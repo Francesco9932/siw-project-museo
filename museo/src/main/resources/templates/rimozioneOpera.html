@@ -5,13 +5,15 @@
 <body>
   	<div class="container-collezioni">
   		<h1>Opere da rimuovere:</h1>
-  		<ul>
-  			<li th:each="opera : ${opere}">
-  				<a th:href="@{'/admin/removeOpera' + '/' + ${opera.id}}" th:text="${opera.titolo}">
-  					<img th:src="${opera.immagine}">
-  				</a>
-  			</li>
-  		</ul>
+  		<em>
+  			<ul>
+  				<li th:each="opera : ${opere}">
+  					<a th:href="@{'/admin/removeOpera' + '/' + ${opera.id}}" th:text="${opera.titolo}">
+  						<img th:src="${opera.immagine}">
+  					</a>
+  				</li>
+  			</ul>
+  		</em>
   	</div>
 </body>
 </html>

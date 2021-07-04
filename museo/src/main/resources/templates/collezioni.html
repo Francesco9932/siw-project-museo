@@ -6,12 +6,14 @@
   	<nav th:replace = "/fragments/components.html :: navbar"></nav>
   	<div class="container-collezioni">
   		<h1>Collezioni:</h1>
-  		<ul>
-  			<li th:each="collezione : ${collezioni}">
-  				<a href="collezione.html" th:href="@{'/collezione' + '/' + ${collezione.id}}" 
-  					th:text="${collezione.nome}">Nome Cognome</a>
-  			</li>
-  		</ul>
+  		<em>
+  			<ul>
+  				<li th:each="collezione : ${collezioni}">
+  					<a href="collezione.html" th:href="@{'/collezione' + '/' + ${collezione.id}}" 
+  						th:text="${collezione.nome}">Nome Cognome</a>
+  				</li>
+  			</ul>
+  		</em>
   	</div>
   	<footer th:replace = "/fragments/components.html :: footer"></footer>
 </body>
