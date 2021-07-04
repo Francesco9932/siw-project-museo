@@ -17,6 +17,7 @@ import it.uniroma3.siw.museo.service.MuseoService;
 public class CollezioneController {
 	@Autowired
 	private MuseoService museoService;
+	
 	@Autowired
 	private CollezioneValidator collezioneValidator;
 
@@ -48,5 +49,17 @@ public class CollezioneController {
 	public String getArtista(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("collezione",this.museoService.getCollezionePerId(id));
 		return "collezione.html";
+	}
+	
+	@RequestMapping(value = "/admin/rimuoviCollezione", method = RequestMethod.GET)
+	public String getCollezioni(Model model) {
+		model.addAttribute("collezioni",museoService.getCollezioni());
+		return "rimozioneCollezione.html";
+	}
+	
+	@RequestMapping(value = "/admin/rimuoviCollezione/{id}", method = RequestMethod.GET)
+	public String removeCollezione(@PathVariable("id") Long id, Model model) {
+		museoService.rimuoviCollezione(id);
+		return "index.html";
 	}
 }

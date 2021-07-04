@@ -6,7 +6,7 @@
     	<h1>Artisti da rimuovere:</h1>
     	<ul class="artisti-ul">
         	<li th:each="artista : ${artisti}">
-            <a th:href="@{'/removeArtista' + '/' + ${artista.id}}" 
+            <a th:href="@{'/admin/removeArtista' + '/' + ${artista.id}}" 
              th:text="|${artista.nome} ${artista.cognome}|">Nome cognome</a>
         	</li>
     	</ul>

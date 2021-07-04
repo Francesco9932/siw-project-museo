@@ -131,7 +131,7 @@ footer {
 .container-artist-description{
 	display: flex;
 	align-items: center;
-	text-align: center;
+	text-align: start;
 	padding: 1px 30px;
 }
 .container-artist-information{
@@ -141,6 +141,17 @@ footer {
 .information{
 	text-align: center;
 }
+.information a{
+	text-align: center;
+	text-decoration: none;
+	color:white;
+}
+.information a{
+	text-align: center;
+	text-decoration: underline;
+	color:white;
+}
+
 .information h2{
 	font-size: 3rem;
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif

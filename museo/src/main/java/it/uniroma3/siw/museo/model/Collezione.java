@@ -3,6 +3,7 @@ package it.uniroma3.siw.museo.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -28,7 +29,7 @@ public class Collezione {
 	@ManyToOne()
 	private Curatore curatore;
 	
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "collezione") //Eager = impaziente 
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "collezione",cascade = CascadeType.ALL) //Eager = impaziente 
 	private List<Opera> opere;
 	
 	public Collezione() {

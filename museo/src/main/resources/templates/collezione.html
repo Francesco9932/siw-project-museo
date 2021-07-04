@@ -13,9 +13,10 @@
 
     <div class="container-opere">
         <div th:each="opera : ${collezione.opere}">
+        	<a th:href="'/artista' + '/' + ${opera.artista.id}" th:text="|${opera.artista.nome} ${opera.artista.cognome}|">Vincent van Gogh</a>
 			<a href="opera.html" th:href="'/opera' + '/' + ${opera.id}"><img class = "opera-image" th:src="${opera.immagine}"
                 alt="Impossibile caricare immagine dell'opera"></a>
-            <p th:text="${opera.descrizione}">descrizione</p>
+            <a th:href="'/opera' + '/' + ${opera.id}" th:text="${opera.titolo}">Notte stellata</a>
 		</div>
     </div>
     <!--

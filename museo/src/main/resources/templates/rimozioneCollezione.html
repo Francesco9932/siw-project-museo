@@ -1,0 +1,17 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/components.html :: headerfiles(title=#{pageTitle.museo})"></head>
+
+<body>
+  	<div class="container-collezioni">
+  		<h1>Collezione da rimuovere:</h1>
+  		<ul>
+  			<li th:each="collezione : ${collezioni}">
+  				<a th:href="@{'/admin/rimuoviCollezione' + '/' + ${collezione.id}}" 
+  					th:text="${collezione.nome}">
+  				</a>
+  			</li>
+  		</ul>
+  	</div>
+</body>
+</html>

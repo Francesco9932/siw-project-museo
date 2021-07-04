@@ -51,8 +51,8 @@ public class MuseoService{
 	}
 
 	@Transactional
-	public void rimuoviCollezione(Collezione collezione) {
-		collezioneRepository.delete(collezione);
+	public void rimuoviCollezione(Long id) {
+		collezioneRepository.deleteById(id);
 	}
 	
 	@Transactional

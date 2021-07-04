@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -27,7 +28,7 @@ public class CuratoreController {
 	}
 
 	@RequestMapping(value = "/admin/curatore", method = RequestMethod.POST)
-	public String newPersona(@ModelAttribute("curatore") Curatore curatore, 
+	public String newCuratore(@ModelAttribute("curatore") Curatore curatore, 
 			Model model, BindingResult bindingResult) {
 		this.curatoreValidator.validate(curatore,bindingResult);
 		if(!bindingResult.hasErrors()) {
@@ -35,5 +36,17 @@ public class CuratoreController {
 			return "index.html";
 		}
 		return "curatoreForm.html";
+	}
+	
+	@RequestMapping(value="/admin/rimuoviCuratore",method = RequestMethod.GET)
+	public String getCuratoriDaRimuovere(Model model) {
+		model.addAttribute("curatori", museoService.getCuratori());
+		return "rimozioneCuratore.html";
+	}
+	
+	@RequestMapping(value="/admin/rimuoviCuratore/{id}",method = RequestMethod.GET)
+	public String removeCuratore(@PathVariable("id") Long id, Model model) {
+		museoService.rimuoviCuratore(id);
+		return "index.html";
 	}
 }
