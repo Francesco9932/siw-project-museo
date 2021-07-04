@@ -36,7 +36,8 @@ public class OperaController {
 		this.operaValidator.validate(opera,bindingResult);
 		if(!bindingResult.hasErrors()) {
 			this.museoService.aggiungiOpera(opera);
-			return "index.html";
+			model.addAttribute("collezioni",museoService.getCollezioni());
+			return "collezioni.html";
 		}
 		return "operaForm.html";
 	}
@@ -56,6 +57,7 @@ public class OperaController {
 	@RequestMapping(value="/admin/removeOpera/{id}",method = RequestMethod.GET)
 	public String removeOpera(@PathVariable("id") Long id, Model model) {
 		museoService.rimuoviOpera(id);
-		return "index.html";
+		model.addAttribute("collezioni",museoService.getCollezioni());
+		return "collezioni.html";
 	}
 }

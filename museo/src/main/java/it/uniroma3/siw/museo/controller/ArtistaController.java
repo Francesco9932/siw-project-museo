@@ -36,12 +36,13 @@ public class ArtistaController {
 	}
 
 	@RequestMapping(value = "/admin/artista", method = RequestMethod.POST)
-	public String newPersona(@ModelAttribute("artista") Artista artista, 
+	public String newArtista(@ModelAttribute("artista") Artista artista, 
 			Model model, BindingResult bindingResult) {
 		this.artistaValidator.validate(artista,bindingResult);
 		if(!bindingResult.hasErrors()) {
 			this.museoService.aggiungiArtista(artista);
-			return "index.html";
+			model.addAttribute("artisti",museoService.getArtisti());
+			return "autori.html";
 		}
 		return "artistaForm.html";
 	}
@@ -61,7 +62,8 @@ public class ArtistaController {
 	@RequestMapping(value = "/admin/removeArtista/{id}", method = RequestMethod.GET)
 	public String removeArtista(@PathVariable("id") Long id, Model model) {
 		this.museoService.rimuoviArtista(id);
-		return "index.html";
+		model.addAttribute("artisti",museoService.getArtisti());
+		return "autori.html";
 	}
 	
 	@RequestMapping(value = "/admin/rimuoviArtista", method = RequestMethod.GET)

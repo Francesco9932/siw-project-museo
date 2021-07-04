@@ -9,7 +9,7 @@
 		<div th:if="${#fields.hasGlobalErrors()}">
   			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
 		</div>
-		<div>
+		<div class="flex-form">
 			<div>
       			<span >Titolo:</span>
       			<span><input type="text" th:field="*{titolo}"></span>
@@ -42,7 +42,7 @@
        				<option th:each="collezione: ${collezioni}" th:value="${collezione.id}" th:text="${collezione.nome}"></option>
     			</select>
   			</div>
-  			<div>
+  			<div id="submit-button">
       			<span><button type="submit">Invio</button></span>
   			</div>
 		</div>

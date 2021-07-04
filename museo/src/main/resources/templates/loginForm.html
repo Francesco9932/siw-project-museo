@@ -5,7 +5,7 @@
 <div class="container-form">
 	<h4>Login</h4>
 	<form th:action="@{/login}" method="POST">		
-		<div>
+		<div class="flex-form">
 			<div>
 				<span>Username:</span>
 				<span><input name="username" type="text" required /></span>
@@ -15,7 +15,7 @@
 				<span><input name="password" type="password" required /></span>
 			</div>
 			
-			<div>
+			<div id="submit-button">
 				<span><button type="submit">Invio</button></span>
 			</div>
 	</form>

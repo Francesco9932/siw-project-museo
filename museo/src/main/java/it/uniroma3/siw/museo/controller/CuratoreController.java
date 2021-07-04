@@ -33,7 +33,8 @@ public class CuratoreController {
 		this.curatoreValidator.validate(curatore,bindingResult);
 		if(!bindingResult.hasErrors()) {
 			this.museoService.aggiungiCuratore(curatore);
-			return "index.html";
+			model.addAttribute("curatori",museoService.getCuratori());
+			return "curatori.html";
 		}
 		return "curatoreForm.html";
 	}
@@ -47,6 +48,7 @@ public class CuratoreController {
 	@RequestMapping(value="/admin/rimuoviCuratore/{id}",method = RequestMethod.GET)
 	public String removeCuratore(@PathVariable("id") Long id, Model model) {
 		museoService.rimuoviCuratore(id);
-		return "index.html";
+		model.addAttribute("curatori",museoService.getCuratori());
+		return "curatori.html";
 	}
 }

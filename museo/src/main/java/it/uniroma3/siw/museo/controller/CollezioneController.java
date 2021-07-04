@@ -40,7 +40,8 @@ public class CollezioneController {
 		this.collezioneValidator.validate(collezione, bindingResult);
 		if(!bindingResult.hasErrors()) {
 			this.museoService.aggiungiCollezione(collezione);
-			return "index.html";
+			model.addAttribute("collezioni",museoService.getCollezioni());
+			return "collezioni.html";
 		}
 		return "collezioneForm.html";
 	}
@@ -60,6 +61,7 @@ public class CollezioneController {
 	@RequestMapping(value = "/admin/rimuoviCollezione/{id}", method = RequestMethod.GET)
 	public String removeCollezione(@PathVariable("id") Long id, Model model) {
 		museoService.rimuoviCollezione(id);
-		return "index.html";
+		model.addAttribute("collezioni",museoService.getCollezioni());
+		return "collezioni.html";
 	}
 }

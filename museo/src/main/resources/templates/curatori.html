@@ -1,0 +1,17 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/components.html :: headerfiles(title=#{pageTitle.museo})"></head>
+
+<body>
+  	<nav th:replace = "/fragments/components.html :: navbar"></nav>
+  	<div class="container-collezioni">
+  		<h1>Curatori:</h1>
+  		<ul>
+  			<li th:each="curatore : ${curatori}">
+  				<p th:text="${curatore.nome}">Nome</p>
+  			</li>
+  		</ul>
+  	</div>
+  	<footer th:replace = "/fragments/components.html :: footer"></footer>
+</body>
+</html>

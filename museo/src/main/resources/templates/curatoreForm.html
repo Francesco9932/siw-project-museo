@@ -8,7 +8,7 @@
 		<div th:if="${#fields.hasGlobalErrors()}">
   			<p th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p>
 		</div>	
-		<div>
+		<div class="flex-form">
 			<div>
       			<span>Nome:</span>
       			<span><input type="text" th:field="*{nome}"></span>
@@ -34,7 +34,7 @@
       			<span><input type="text" th:field="*{email}"></span>
       			<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
   			</div>
-			<div>
+			<div id="submit-button">
 				<span><button type="submit">Invio</button></span>
 			</div>
 		</div>

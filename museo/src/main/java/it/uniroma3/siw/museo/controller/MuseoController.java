@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import it.uniroma3.siw.museo.service.MuseoService;
 
@@ -25,7 +26,7 @@ public class MuseoController {
 	}
 	
 	@RequestMapping(value = {"/", "index"}, method = RequestMethod.GET)
-	public String index(Model model) {
-			return "index";
+	public ModelAndView index(Model model) {
+			return new ModelAndView("redirect:/default");
 	}
 }
