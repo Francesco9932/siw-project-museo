@@ -142,11 +142,7 @@ footer {
 .information{
 	text-align: center;
 }
-.information a{
-	text-align: center;
-	text-decoration: none;
-	color:white;
-}
+
 .information a{
 	text-align: center;
 	text-decoration: underline;
@@ -181,6 +177,7 @@ footer {
 }
 .container-opere div p{
 	display:flex;
+	color:black;
 }
 .opera-image{
 	width:400px;
