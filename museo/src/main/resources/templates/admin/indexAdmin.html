@@ -30,16 +30,11 @@
   	<div class="operazioni-amministartore-item">
   		<a href="/admin/rimuoviCollezione">Rimuovi collezione</a>
   	</div>
-  	<div class="operazioni-amministartore-item">
-  		<a href="/admin/collezioneDaModificare">Modifica collezione</a>
-  	</div>
   </div>
   
   <div class="container-opere">
         <div th:each="opera,iterStat : ${opere}" th:if="${iterStat.index}<5">
-       		 <a th:href="'/artista' + '/' + ${opera.artista.id}" th:text="|${opera.artista.nome} ${opera.artista.cognome}|">Vincent van Gogh</a>
-			 <img class = "opera-image" th:src="${opera.immagine}" alt="Impossibile caricare immagine dell'opera">
-			 <a th:href="'/opera' + '/' + ${opera.id}" th:text="${opera.titolo}">Notte stellata</a>
+			<img class = "opera-image" th:src="${opera.immagine}" alt="Impossibile caricare immagine dell'opera">
 		</div>
   </div>
   <footer th:replace = "/fragments/components.html :: footer"></footer>
