@@ -64,4 +64,23 @@ public class CollezioneController {
 		model.addAttribute("collezioni",museoService.getCollezioni());
 		return "collezioni.html";
 	}
+	
+	@RequestMapping(value = "/admin/collezioneDaModificare/{id}", method = RequestMethod.GET)
+	public String collezioneDaModificare(@PathVariable("id") Long id, Model model) {
+		Collezione collezione = this.museoService.getCollezionePerId(id);
+		Collezione collezioneModificato = new Collezione();
+		collezioneModificato.setNome(collezione.getNome());
+		collezioneModificato.setDescrizione(collezione.getDescrizione());
+		collezioneModificato.setCuratore(collezione.getCuratore());
+		this.museoService.rimuoviCollezione(id);
+		model.addAttribute("collezione", collezioneModificato);
+		return "collezioneForm.html";
+		}
+	
+	@RequestMapping (value = "/admin/collezioneDaModificare", method = RequestMethod.GET)
+	public String mostraCollezioneDaModificare (Model model ) {
+		model.addAttribute("collezioni", museoService.getCollezioni());
+		return "modificaCollezione.html";	
+	}
+	
 }
