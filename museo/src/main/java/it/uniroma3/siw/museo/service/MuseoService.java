@@ -177,8 +177,4 @@ public class MuseoService{
 		else 
 			return false;
 	}
-
-	public void modificaCollezione(Collezione collezione) {
-		this.collezioneRepository.save(collezione);
-	}
 }
