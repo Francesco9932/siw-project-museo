@@ -58,6 +58,8 @@ public class ArtistaController {
 		model.addAttribute("artista",this.museoService.getArtistaPerId(id));
 		return "artista.html";
 	}
+	
+	
 
 	@RequestMapping(value = "/admin/removeArtista/{id}", method = RequestMethod.GET)
 	public String removeArtista(@PathVariable("id") Long id, Model model) {
