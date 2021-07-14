@@ -29,7 +29,7 @@ public class Collezione {
 	@ManyToOne()
 	private Curatore curatore;
 	
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "collezione",cascade = CascadeType.ALL) //Eager = impaziente 
+	@OneToMany(mappedBy = "collezione",cascade = CascadeType.ALL) 
 	private List<Opera> opere;
 	
 	public Collezione() {
